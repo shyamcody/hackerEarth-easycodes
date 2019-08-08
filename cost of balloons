@@ -1,0 +1,21 @@
+no_test_cases=int(input())
+for i in range(no_test_cases):
+    string_prices=input()
+    prices=[int(i) for i in string_prices.split(' ')]
+    no_participants=int(input())
+    first_problemsolved=0
+    second_problemsolved=0
+    for j in range(no_participants):
+        status_current=input()
+        list_status=[int(i) for i in status_current.split(' ')]
+        first_problemsolved+=list_status[0]
+        second_problemsolved+=list_status[1]
+    prices.sort()
+    #print(prices)
+    status=[first_problemsolved,second_problemsolved]
+    status.sort(reverse=True)
+    #print(status)
+    value=0
+    for i in range(2):
+        value+=prices[i]*status[i]
+    print(value)
