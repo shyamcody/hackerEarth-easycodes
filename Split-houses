@@ -1,0 +1,15 @@
+n=int(input())
+string_village=input()
+hot_encoded_village=[]
+for s in string_village:
+    if s=='H':
+        hot_encoded_village.append(1)
+    elif s==".":
+        hot_encoded_village.append(0)
+if 'HH' in string_village:
+    print('NO')
+else:
+    string_git=string_village.replace(".","B")
+    print('YES')
+    print(string_git)
+    
