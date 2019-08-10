@@ -1,0 +1,8 @@
+no_friends=int(input())
+limit=int(input())
+for i in range(no_friends):
+    skill=int(input())
+    if skill>=limit:
+        print('YES')
+    else: 
+        print('NO')
