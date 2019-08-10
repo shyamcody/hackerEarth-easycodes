@@ -1,0 +1,13 @@
+string_direction=list(input())
+point=[0,0]
+for direction in string_direction:
+    if direction=='L':
+        point[0]-=1
+    elif direction=='R':
+        point[0]+=1
+    elif direction=='U':
+        point[1]+=1
+    else:
+        if direction=='D':
+            point[1]-=1
+print(point[0],point[1])
