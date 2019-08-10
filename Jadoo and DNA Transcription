@@ -1,0 +1,19 @@
+s=list(input())
+count=True
+for i in range(len(s)):
+    if s[i] not in ['G','C','T','A','U']:
+        print('Invalid Input')
+        count=False
+        break
+    if s[i]=='G':
+        s[i]='C'
+    elif s[i]=='C':
+        s[i]='G'
+    elif s[i]=='T':
+        s[i]='A'
+    else:
+        if s[i]=='A':
+            s[i]='U'
+s=''.join(s)
+if count:
+    print(s)
