@@ -1,0 +1,15 @@
+def reassemble(string):
+    string=list(string)
+    string.sort()
+    string=''.join(string)
+    return string
+no_of_test_cases=int(input())
+for i in range(no_of_test_cases):
+    strings_sep=input()
+    stringlist=strings_sep.split(' ')
+    string1=reassemble(stringlist[0])
+    string2=reassemble(stringlist[1])
+    if string1==string2:
+        print('YES')
+    else:
+        print('NO')
