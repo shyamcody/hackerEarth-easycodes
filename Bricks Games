@@ -1,0 +1,10 @@
+from math import floor
+no_brick=int(input())
+round_last=floor((-3+(9+24*no_brick)**0.5)/6)
+#summed up the a.p.
+brick_removed=3*round_last*(round_last+1)/2
+left=no_brick-brick_removed
+if left<=round_last+1:
+    print("Patlu")
+else:
+    print("Motu")
