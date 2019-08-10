@@ -1,0 +1,11 @@
+no_test_cases=int(input())
+for i in range(no_test_cases):
+    entry=input()
+    digits=[int(i) for i in entry.split(' ')]
+    instant1=digits[0]*60+digits[1]
+    instant2=digits[2]*60+digits[3]
+    time_gap=instant2-instant1
+    time_gap_hr=time_gap//60
+    time_gap_min=time_gap%60
+    print(time_gap_hr,time_gap_min)
+    
