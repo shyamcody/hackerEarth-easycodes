@@ -1,0 +1,11 @@
+no_test_cases=int(input())
+a=0
+b=7
+for i in range(no_test_cases):
+    call_floor=int(input())
+    if abs(call_floor-a)<=abs(call_floor-b):
+        print('A')
+        a=call_floor
+    else:
+        print('B')
+        b=call_floor
