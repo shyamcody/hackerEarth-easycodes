@@ -1,0 +1,8 @@
+no_people=int(input())
+height_as_string=input()
+heights=[int(height) for height in height_as_string.split(" ")]
+sum_go=1
+for i in range(len(heights)-1):
+    if heights[i]>heights[i+1]:
+        sum_go+=1
+print(sum_go)
