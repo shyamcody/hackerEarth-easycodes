@@ -1,0 +1,21 @@
+#the problem may sound sophisticated, but supposedly you are not allowed to remove the repeatations.
+#If you have found this one easy, try with removing repeatation.
+#Here, the catch is that, 2^60>10^18 hence, you can put that cap there. And also you can not get 2 power anything as it will
+#give you overflow errors.
+no_test_cases=int(input())
+
+big_number=pow(10,9)+7
+for i in range(no_test_cases):
+    length=int(input())
+    list_as_string=input()
+    list_no=[int(string) for string in list_as_string.split(" ")]
+    Total_charge=0
+    if length>60:
+        Total_charge=0
+    else:
+        charge=pow(2,length-1)
+        for elem in list_no:
+            if elem>=charge:
+                Total_charge+=elem
+                Total_charge=Total_charge%big_number
+    print(Total_charge)
