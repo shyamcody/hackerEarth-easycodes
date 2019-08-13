@@ -1,0 +1,7 @@
+from calendar import weekday as w
+for j in range(1,13):
+    for i in range(1,32):
+        try:
+            if w(2019,j,i) in [5,6] and j*31+i not in [217,372]:print('.'.join([str(i),str(j),'2019']))
+        except:pass
+
