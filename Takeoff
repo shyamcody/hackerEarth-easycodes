@@ -1,0 +1,16 @@
+#gcf and lcm codes are taken from geeksforgeeks
+def gcd(a,b): 
+    if a == 0: 
+        return b 
+    return gcd(b % a, a) 
+def lcm(a,b): 
+    return (a*b) / gcd(a,b) 
+no_test_cases=int(input())
+for i in range(no_test_cases):
+    list_as_string=input()
+    list_no=[int(no) for no in list_as_string.split(" ")]
+    N,p,q,r=list_no[0],list_no[1],list_no[2],list_no[3]
+    #print(N,p,q,r,lcm(lcm(p,q),r))
+    no_flight=N//p+N//q+N//r-2*(N//lcm(p,q)+N//lcm(q,r)+N//lcm(r,p))+3*(N//lcm(lcm(p,q),r))
+    print(int(no_flight))
+    
