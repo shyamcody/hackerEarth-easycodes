@@ -1,0 +1,25 @@
+no_test=int(input())
+for i in range(no_test):
+    list_as_string=list(input())
+    list_no=[int(no) for no in list_as_string]
+    #print(list_no)
+    sum_circle=0
+    for i in range(len(list_no)-1):
+        sum_circle+=list_no[i+1]-list_no[i]
+    sum_circle+=list_no[0]-list_no[-1]
+    sum_natural=0
+    repeat=0
+    list_no.sort()
+    for i in range(len(list_no)-1):
+        diff=list_no[i+1]-list_no[i]
+        sum_natural+=diff
+        if diff==0:
+            repeat+=1
+    #print(sum_natural,sum_circle)
+    if sum_circle==0 and sum_natural==(len(list_no)-1):
+        if repeat==0:
+            print("YES")
+        else:
+            print("NO")
+    else:
+        print("NO")
