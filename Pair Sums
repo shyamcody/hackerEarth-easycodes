@@ -1,0 +1,35 @@
+numbers=input()
+numbers_list=[int(no) for no in numbers.split(" ")]
+N,K=numbers_list[0],numbers_list[1]
+list_as_string=input()
+list_no=[int(no) for no in list_as_string.split(" ")]
+list_up=[]
+for i in list_no:
+    if i<=K:
+        list_up.append(i)
+uniques=list(set(list_up))
+dict_list={}
+for unique in uniques:
+    dict_list[unique]=0
+for elem in list_up:
+    dict_list[elem]+=1
+
+count=0
+for number in uniques:
+    number_required=K-number
+    try:
+        occurrence=dict_list[number_required]
+        if occurrence>=1 and number_required!=number:
+            print("YES")
+            count+=1
+            break
+        elif number_required==number and occurrence>1:
+            print("YES")
+            count+=1
+            break
+        else:
+            pass
+    except:
+        pass
+if count==0:
+    print("NO")
