@@ -1,0 +1,23 @@
+no_length=int(input())
+string_call=input()
+string_ideal=input()
+list_call=[int(elem) for elem in string_call.split(" ")]
+list_ideal=[int(elem) for elem in string_ideal.split(" ")]
+count=0
+process=0
+while True:
+    while list_ideal[0]!=list_call[0]:
+        process+=1
+        elem=list_call.pop(0)
+        list_call.append(elem)
+    if list_ideal[0]==list_call[0]:
+        list_call.pop(0)
+        process+=1
+        list_ideal.pop(0)
+    if len(list_ideal)==0:
+        break
+while len(list_call)>0:
+    list_call.pop()
+    process+=1
+print(process)
+    
