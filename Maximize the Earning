@@ -1,0 +1,21 @@
+no_streets=int(input())
+def visible_number(list_heights):
+    if list_heights[0]<0.5:
+        big_height=0
+    else:
+        big_height=list_heights[0]
+    count=1
+    for i in range(1,len(list_heights)):
+        if list_heights[i]>max(big_height,0.5):
+            big_height=list_heights[i]
+            count+=1
+    return count
+for i in range(no_streets):
+    list_as_string=input()
+    list_no=[int(no) for no in list_as_string.split(" ")]
+    N,R=list_no[0],list_no[1]
+    list_heights_string=input()
+    list_heights=[int(height) for height in list_heights_string.split(" ")]
+    count=visible_number(list_heights)
+    print(count*R)
+    
