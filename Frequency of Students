@@ -1,0 +1,13 @@
+no_names=int(input())
+names_list=[]
+for i in range(no_names):
+    names_list.append(input())
+names_uniques=list(set(names_list))
+names_dict={}
+for name in names_uniques:
+    names_dict[name]=0
+for name in names_list:
+    names_dict[name]+=1
+names_uniques.sort()
+for name in names_uniques:
+    print(name,names_dict[name])
