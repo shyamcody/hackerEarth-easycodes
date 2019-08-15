@@ -1,0 +1,37 @@
+#see pair sums before seeing this. You will understand why.
+no_test=int(input())
+for i in range(no_test):
+    N=int(input())
+    list_string=input()
+    list_no=[int(no) for no in list_string.split(" ")]
+    K=int(input())
+    list_up=[]
+    for i in list_no:
+        if i<=K:
+            list_up.append(i)
+    uniques=list(set(list_up))
+    dict_list={}
+    for unique in uniques:
+        dict_list[unique]=0
+    for elem in list_up:
+        dict_list[elem]+=1
+
+    count={}
+    for number in uniques:
+        count[number]=0
+    for number in uniques:
+        number_required=K-number
+        try:
+            occurrence=dict_list[number_required]
+            if occurrence>=1 and number_required!=number:
+                count[number]+=1*occurrence*dict_list[number]/2
+            elif number_required==number and occurrence>1:
+                count[number]+=occurrence*(occurrence-1)/2
+            else:
+                pass
+        except:
+            pass
+    countie=0
+    for number in uniques:
+        countie+=count[number]
+    print(int(countie))
