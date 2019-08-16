@@ -1,0 +1,23 @@
+#This is solution to:
+#https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/snackdown-contest/
+#reading the right answer was the main challenge
+no_test_cases=int(input())
+for i in range(no_test_cases):
+    N=int(input())
+    list_me_string=input()
+    list_roomie_string=input()
+    list_me=[int(no) for no in list_me_string.split(" ")]
+    list_roomie=[int(no) for no in list_roomie_string.split(" ")]
+    list_roomie.pop(0)
+    list_me.pop(0)
+    total=list_me+list_roomie
+    mains=[]
+    for entry in total:
+        if entry>=1 or entry<=N:
+            mains.append(entry)
+    solvables=len(list(set(mains)))
+    
+    if solvables==N:
+        print("YES")
+    else:
+        print("NO")
