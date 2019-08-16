@@ -1,0 +1,34 @@
+#this is solution to statistics from 
+#https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/statistics-2/
+no_entry=int(input())
+decisions=[]
+keys=[]
+for i in range(no_entry):
+    list_string=input()
+    list_no=list_string.split(" ")
+    name,sport=list_no[0],list_no[1]
+    if name not in keys:
+        keys.append(name)
+        decisions.append(sport)
+    else:
+        pass
+list_sports=decisions
+game_dict={}
+sport_unique=list(set(list_sports+['football']))
+for sport in sport_unique:
+    game_dict[sport]=0
+for sport in list_sports:
+    game_dict[sport]+=1
+values=[game_dict[sport] for sport in sport_unique]
+max_val=max(values)
+indices=[]
+for i in range(len(values)):
+    if values[i]==max_val:
+        indices.append(i)
+games=[sport_unique[i] for i in indices]
+games.sort()
+print(games[0])
+print(game_dict['football'])
+    
+    
+    
