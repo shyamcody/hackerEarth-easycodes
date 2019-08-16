@@ -1,0 +1,17 @@
+#This is solution to:
+#https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/strange-game-1-7e758acb-1bff10f0/
+no_test_cases=int(input())
+for i in range(no_test_cases):
+    list_info_string=input()
+    list_info_no=[int(string) for string in list_info_string.split(" ")]
+    N,K=list_info_no[0],list_info_no[1]
+    list_alice_string=input()
+    list_bob_string=input()
+    list_alice=[int(string) for string in list_alice_string.split(" ")]
+    list_bob=[int(string) for string in list_bob_string.split(" ")]
+    value_achieved=max(list_bob)+1
+    sum_improve=0
+    for card in list_alice:
+        if card<value_achieved:
+            sum_improve+=value_achieved-card
+    print(sum_improve*K)
