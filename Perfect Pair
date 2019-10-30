@@ -1,0 +1,35 @@
+big_list = [k**2 for k in range(1,45)] + [l**3 for l in range(1,14)]
+def isperfect(n):
+    return n in big_list
+isperfecto={}
+for i in range(1,2001):
+    isperfecto[i] = isperfect(i)
+def searchPerfectPair(N,array,dictionary):
+    count = 0
+    for i in range(N):
+        for j in range(i+1,N):
+            if isperfecto[array[i] + array[j]]:
+                count += dictionary[array[i]]*dictionary[array[j]]
+            else:
+                pass
+        if dictionary[array[i]]>1 and isperfecto[2*array[i]]:
+            count += dictionary[array[i]]*(dictionary[array[i]]-1)/2
+    return count
+def histoCreator(list_val):
+    dictionary = {}
+    elems = list(set(list_val))
+    for elem in elems:
+        dictionary[elem] = 0
+    for elem in list_val:
+        dictionary[elem]+= 1
+    return dictionary
+
+no_test_cases = int(input())
+
+for i in range(no_test_cases):
+    N = int(input())
+    array = [int(no) for no in input().split(" ")]
+    setter = list(set(array))
+    dictionary = histoCreator(array)
+    print(int(searchPerfectPair(len(setter),setter,dictionary)))
+    
